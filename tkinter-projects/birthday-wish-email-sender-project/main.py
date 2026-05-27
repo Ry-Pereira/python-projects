@@ -29,7 +29,7 @@ YOUR_NAME = ""
 
 
 #Letters list set to a list of letter text documents
-letters_list = ["letter1.txt","letter2.txt","letter3.txt","letter4.txt"]
+letters_list = ["letter-option-1.txt","letter-option-2.txt","letter-option-3.txt","letter-option-4.txt"]
 
 
 #Defining the store birthday info function
