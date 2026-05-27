@@ -1,7 +1,7 @@
 #Name: Ryan Pereira
 #Project Name: Caesar Cipher Program
 #Description: A Python-based Caesar Cipher application that allows users to encrypt and decrypt words by shifting letters through the alphabet.Users can choose to cipher or decipher text using a custom shift value through a menu-driven interface.
-#Module Name: Caesar Cipher
+#Module Name: main.py
 #Module Purpose: This program serves as a Caesar Cipher encoder and decoder.It uses alphabet indexing and shift logic to transform text into encrypted or decrypted forms based on the user’s chosen shift amount.
 #Collaborators: None
 #Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation

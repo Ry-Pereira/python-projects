@@ -1,5 +1,6 @@
 #Name: Ryan Pereira
 #Project Name: Timer
+# Module Name: main.py
 #Description: A simple timer that lets user enter a time for hours, minutes, and seconds. Let the user start the timer, pause the timer, and reset the timer 
 #Collaborators: None
 #Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation

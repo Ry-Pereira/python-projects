@@ -1,5 +1,6 @@
 # Name: Ryan Pereira
 # Project Name: Hangman
+# Module Name: main.py
 # Description: A simple hangman game where the user tries to guess a word
 # Collaborators: None
 # Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation

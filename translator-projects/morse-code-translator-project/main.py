@@ -1,7 +1,7 @@
 #Name: Ryan Pereira
 #Project Name: Morse Code Translator
 #Description: A Python-based Morse Code Translator program that allows users to convert text into Morse code and decode Morse code back into readable text. The program uses a dictionary of Morse code mappings and a menu-driven interface for user interaction. It also includes a feature to display the full Morse code alphabet and numbers for reference.
-#Module Name: Morse Code Translator
+#Module Name: main.py
 #Module Purpose: This program serves as a Morse code encoder and decoder. It uses a dictionary to map letters and numbers to Morse code equivalents and performs translation in both directions based on user input.
 #Collaborators: None
 #Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
