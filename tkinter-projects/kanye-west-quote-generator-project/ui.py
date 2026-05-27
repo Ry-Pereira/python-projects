@@ -45,7 +45,7 @@ class KanyeWestGeneratorUI:
         self.canvas.grid(row=1,column=0,columnspan=2,pady=10)
 
         #The UI has a kanye image set to e Photo object, with file set to specific file name in project folder
-        self.kanye_image = PhotoImage(file="images/kanye_faces/kanye.png")
+        self.kanye_image = PhotoImage(file="images/kanye-face-pictures/kanye-emoji-face.png")
         #The kanye image id is set to the Ui's canvas with a image of a specified x and y position, with the image set to eht UI's kanye image
         kanye_image_id = self.canvas.create_image(230,500,image = self.kanye_image)
         #The Ui bind the kanye image id and button that get sleft clicked, to the command to thingking of a quote
@@ -55,7 +55,7 @@ class KanyeWestGeneratorUI:
         self.intro_text = self.canvas.create_text(300,240,text="Click on Kanye West for Quote.",font=("Arial",18,"bold italic"),width=170)
 
         #The Ui's speech bubble set is set to all Photo Image objects, set to all colors included in the speech bubble files under images
-        self.speech_bubbles = [PhotoImage(file="images/speech_bubbles/red_speech.png"),PhotoImage(file="images/speech_bubbles/orange_speech.png"),PhotoImage(file="images/speech_bubbles/yellow_speech.png"),PhotoImage(file="images/speech_bubbles/green_speech.png"),PhotoImage(file="images/speech_bubbles/blue_speech.png"),PhotoImage(file="images/speech_bubbles/purple_speech.png"),PhotoImage(file="images/speech_bubbles/pink_speech.png")]
+        self.speech_bubbles = [PhotoImage(file="images/colored-speech-bubbles/red-speech-bubble.png"),PhotoImage(file="images/colored-speech-bubbles/orange-speech-bubble.png"),PhotoImage(file="images/colored-speech-bubbles/yellow-speech-bubble.png"),PhotoImage(file="images/colored-speech-bubbles/green-speech-bubble.png"),PhotoImage(file="images/colored-speech-bubbles/blue-speech-bubble.png"),PhotoImage(file="images/colored-speech-bubbles/purple-speech-bubble.png"),PhotoImage(file="images/colored-speech-bubbles/pink-speech-bubble.png")]
         #Self bubble is set to None, becauase one the user visites the program, they will be introdcued first, no quote yet until they prompt to by clicking on the Kanye Image button
         self.bubble = None
         #Same thing with Ui's bubble text is set to None, becuase the user visites the program, they will be introdcued first, no quote yet until they prompt to by clicking on the Kanye Image button.
