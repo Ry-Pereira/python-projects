@@ -1,7 +1,7 @@
 # Name: Ryan Pereira
 # Project Name: Number Guessing Game
 # Description: A Python-based number guessing game where the player tries to guess a randomly selected number within a chosen range, with either limited or unlimited lives depending on user input.
-# Module Name: number_guessing_game
+# Module Name: main.py
 # Module Purpose: This module runs a command-line game that generates a random number, prompts the user for guesses, provides feedback (too high/too low), and tracks win/loss conditions based on remaining lives or unlimited attempts.
 # Collaborators: None
 # Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
