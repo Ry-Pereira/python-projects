@@ -1,0 +1,32 @@
+<!-- Defines the document type as HTML5 -->
+<!DOCTYPE html>
+<!-- Root HTML element, language set to English -->
+<html lang="en">
+    <!-- Head section contains metadata and page settings -->
+    <head>
+        <!-- Sets character encoding to UTF-8 -->
+        <meta charset="UTF-8">
+        <!-- Makes the page responsive on different screen sizes -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title shown in browser tab -->
+        <title>Background Color</title>
+    </head>
+
+
+    <!-- Body section contains visible page content -->
+    <body style="background-color: {{ background_color or 'white' }}">
+        <!-- Displays the name of the selected color centered on the page -->
+        <h1 style="text-align:center">{{ color_name }}</h1>
+        <!-- Displays instruction or message text centered on the page -->
+        <p style="text-align:center">{{ instruction }}</p>
+
+        <!-- Form for changing background color -->
+        <form method="POST" style="text-align:center">
+            <!-- Input field for user to enter a color name -->
+            <input type="text" name="color_name" placeholder="Enter a color name">
+            <!-- Submit button to send the form data -->
+            <button type="submit">Change Background Color</button>
+
+        </form>
+    </body>
+</html>
