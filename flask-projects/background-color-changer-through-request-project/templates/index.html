@@ -1,3 +1,14 @@
+<!-- Name: Ryan Pereira -->
+<!-- Project Name: Background Color Changer -->
+<!-- Description: A Flask web application that changes the background color of a webpage based on a color name provided by the user in a color iin the form request. -->
+<!-- Module Name: index.html -->
+<!-- Module Purpose: This template displays the color name and dynamically changes the background color using values passed from the Flask backend. -->
+<!-- Collaborators: None -->
+<!-- Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation, previous project code reuse -->
+<!-- Date: 5/27/2026 -->
+<!-- Last Modified: 5/27/2026 -->
+
+
 <!-- Defines the document type as HTML5 -->
 <!DOCTYPE html>
 <!-- Root HTML element, language set to English -->
@@ -19,14 +30,12 @@
         <h1 style="text-align:center">{{ color_name }}</h1>
         <!-- Displays instruction or message text centered on the page -->
         <p style="text-align:center">{{ instruction }}</p>
-
         <!-- Form for changing background color -->
         <form method="POST" style="text-align:center">
             <!-- Input field for user to enter a color name -->
             <input type="text" name="color_name" placeholder="Enter a color name">
             <!-- Submit button to send the form data -->
             <button type="submit">Change Background Color</button>
-
         </form>
     </body>
 </html>

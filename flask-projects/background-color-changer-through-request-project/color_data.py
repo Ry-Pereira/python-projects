@@ -1,4 +1,12 @@
-
+# Name: Ryan Pereira
+# Project Name: Background Color Changer
+# Description: A helper module that retrieves color hex codes from an external CSS colors API based on a given color name.
+# Module Name: colordata.py
+# Module Purpose: This module contains a function that requests color data from an API and returns the corresponding hex value for a given color name.
+# Collaborators: None
+# Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation, previous project code reuse
+# Date: 5/27/2026
+# Last Modified: 5/27/2026
 
 
 

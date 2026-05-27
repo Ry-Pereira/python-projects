@@ -1,3 +1,13 @@
+# Name: Ryan Pereira
+# Project Name: Background Color Changer
+# Description: A Flask web application that changes the background color of a webpage based on the color name inputted in the form request.
+# Module Name: main.py
+# Module Purpose: This module serves as entry point into the Flask application.
+# Collaborators: None
+#Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation, previous project code reuse.
+# Date: 5/27/2026
+# Last Modified: 5/27/2026
+
 
 
 
