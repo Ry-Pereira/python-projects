@@ -1,5 +1,5 @@
 
-
+from moon_phase_requests import get_moon_phase
 
 
 
@@ -20,7 +20,7 @@ class MoonTrackerBrain:
 
     def get_moon_phase_for_today(self):
         # Placeholder for actual moon phase calculation
-        return "" 
+        return get_moon_phase()
     
 
     def get_moon_phases_for_week(self):
@@ -38,6 +38,7 @@ class MoonTrackerBrain:
             user_choice = input("Enter your choice (1-4): ")
             if user_choice == "1":
                 moon_phase = self.get_moon_phase_for_today()
+                print(f"Today's moon phase: {moon_phase}")
             elif user_choice == "2":
                 moon_phases = self.get_moon_phases_for_week()
             elif user_choice == "3":
@@ -48,3 +49,12 @@ class MoonTrackerBrain:
                 break
             else:
                 print("Invalid choice. Please enter a number between 1 and 4.")
+
+
+
+
+
+if __name__ == "__main__":
+    print("Testing MoonTrackerBrain...")
+    test = MoonTrackerBrain()
+    test.run()
