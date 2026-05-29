@@ -1,27 +1,13 @@
 
-
-
-
-
-
-
-
-
-
-
+from art import *
+from moon_tracker_brain import MoonTrackerBrain
 
 
 
 def main():
-    print("Welcome to the Daily Moon Tracker Program!")
-
-
-
-
-
-
-
-
+    print(title)
+    moon_tracker_program = MoonTrackerBrain()
+    moon_tracker_program.run()
 
 
 
