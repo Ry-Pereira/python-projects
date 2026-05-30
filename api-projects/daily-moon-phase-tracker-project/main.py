@@ -5,9 +5,8 @@ from moon_tracker_brain import MoonTrackerBrain
 
 
 def main():
-    print(title)
-    moon_tracker_program = MoonTrackerBrain()
-    moon_tracker_program.run()
+    moon_tracker = MoonTrackerBrain()
+    moon_tracker.run()
 
 
 
