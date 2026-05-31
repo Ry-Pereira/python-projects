@@ -12,7 +12,8 @@
 
 
 #From the requests library, import everything. This is used to make HTTP requests to the website to retrieve moon phase data.
-from requests import requests
+from requests import *
+import requests
 #From the datetime library, import the datetime class. This is used to work with dates and times in the program.
 from datetime import datetime
 #From the bs4 library, import the BeautifulSoup class. This is used to parse the HTML of the website and extract the moon phase data.

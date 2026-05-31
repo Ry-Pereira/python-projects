@@ -24,7 +24,6 @@ from art import *
 
 #Defined a MoonTrackerBrain class that contains methods for displaying the menu, retrieving moon phase information for different time periods, and displaying the moon phase information to the user. The run method serves as the main loop of the program, allowing the user to interact with the menu and view moon phase information based on their selections.
 class MoonTrackerBrain:
-   
     #Defined a display_menu method that prints the menu options to the user. This method is called at the beginning of the run method to display the menu when the program starts, and it can also be called again if the user wants to view the menu options after making a selection.
     def display_menu(self):
         #Print the menu options to the user, allowing them to select different options to view moon phase information for today, the current week, the next week, or a specific date. The user can also choose to exit the program.
@@ -37,11 +36,15 @@ class MoonTrackerBrain:
 
 
 
+
+
     #Defined a get_moon_phase_for_today method that retrieves the moon phase information for the current date. This method uses the get_moon_phase function from the moon_phase_requests module to retrieve the moon phase data for today's date, which is then returned as a dictionary containing all the relevant moon phase information.
     def get_moon_phase_for_today(self):
         #Returns the moon phase information for today's date by calling the get_moon_phase function with the current date as an argument. The get_moon_phase function retrieves the moon phase data from the moongiant.com website and returns it in a structured format, which can then be displayed to the user in a user-friendly way, including the ASCII art representations of each moon phase.
         return get_moon_phase(date.today())
     
+
+
     #Defined a get_moon_phases_for_week method that retrieves the moon phase information for each day of the current week. This method calculates the dates for the current week, retrieves the moon phase information for each date using the get_moon_phase function, and returns a list of tuples containing the date and corresponding moon phase information for each day of the week.
     def get_moon_phases_for_week(self):
         #Moon_phases_for_week list is initialized to store the moon phase information for each day of the current week. The monday variable is calculated by finding the date of the most recent Monday, and then a loop iterates through each day of the week (7 days) to calculate the current date and retrieve the moon phase information for that date using the get_moon_phase function. Each date and its corresponding moon phase information are stored as a tuple in the moon_phases_for_week list, which is then returned at the end of the method.
@@ -120,7 +123,7 @@ class MoonTrackerBrain:
      # Defined a run method that serves as the main program loop.
     def run(self):
         #Prints the moon phase tacker title art display for user.
-        print(moon_phase_tracker_title_art_display + "\n\n")
+        print(moon_phase_tracker_title_art_display)
         # Continue running until the user chooses to exit.
         while True:
             # Display the menu when the program starts.
@@ -139,6 +142,9 @@ class MoonTrackerBrain:
                 moon_phases = self.get_moon_phases_for_week()
                 # Loop through each day and display its moon phase.
                 for date, moon_phase in moon_phases:
+                    #Print Date of the moon phase
+                    print("Date: ",date)
+                    #Calls the the display moon phase, taking the moon phase variable as input
                     self.display_moon_phase(moon_phase)
             # Option 3: Display moon phases for the next week.
             elif user_choice == "3":
@@ -146,6 +152,9 @@ class MoonTrackerBrain:
                 moon_phases = self.get_moon_phases_for_next_week()
                 # Loop through each day and display its moon phase.
                 for date, moon_phase in moon_phases:
+                    #Print Date of the moon phase
+                    print("Date: ",date)
+                    #Calls the the display moon phase, taking the moon phase variable as input
                     self.display_moon_phase(moon_phase)
             # Option 4: Look up a moon phase for a specific date.
             elif user_choice == "4":
