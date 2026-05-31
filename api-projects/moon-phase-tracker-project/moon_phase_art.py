@@ -2,7 +2,7 @@
 #Project Name: Moon Phase Tracker Project
 #Description: A program that scrapes moon phase data from a website and displays it to the user in a user-friendly way. The program allows the user to view the current moon phase, the moon phases for the current week, the moon phases for the next week, and the moon phase for a specific date. The program also includes ASCII art representations of each moon phase.
 #Collaborators: None
-#Module Name: art.py
+#Module Name: moon_phase_art.py
 #Module Purpose: This module contains ASCII art representations of different moon phases for display in the Moon Phase Tracker application.
 #Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
 #Date: 5/28/2026

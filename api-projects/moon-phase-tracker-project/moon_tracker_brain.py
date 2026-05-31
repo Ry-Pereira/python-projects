@@ -17,7 +17,7 @@ from datetime import date, datetime, timedelta, timedelta
 #From the moon_phase_requests module, import the get_moon_phase function. This function is used to retrieve moon phase information from the moongiant.com website for specific dates, which is then displayed to the user in the Moon Phase Tracker application.
 from moon_phase_requests import get_moon_phase
 #From the art module, import everything. This is where the ASCII art is stored, which is used to display visual representations of the moon phases to the user in a user-friendly way.
-from art import *
+from moon_phase_art import *
 
 
 
