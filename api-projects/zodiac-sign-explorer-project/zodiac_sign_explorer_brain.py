@@ -1,4 +1,4 @@
-
+from zodiac_sign_art import *
 
 
 
@@ -30,13 +30,57 @@ class ZodiacSignExplorerBrain:
         print("5. Exit")
 
 
+
+
     def display_goodbye_message(self):
         print("\nThank you for using the Zodiac Sign Explorer. Goodbye!")
 
 
 
 
+    def list_all_zodiac_signs(self):
+        pass
+
+
+
+    def get_zodiac_sign_details(self):
+        pass
+
+
+
+    def find_zodiac_sign(self):
+        pass
+
+
+
+    def zodiac_sign_compatibility(self):
+        pass
+
+
+
+    def displauy_zodiac_sign_ascii_art(self, sign):
+        pass
+
+
+
     def run(self):
-        self.display_welcome_message()
+        print(zodiac_sign_title_display)
+        self.display_welcome_messaege()
+        while True:
+            self.display_menu()
+            user_choice = input("Please enter your choice from the menu (1-5): ")
+            if user_choice == "1":
+                self.list_all_zodiac_signs()
+            elif user_choice == "2":
+                self.get_zodiac_sign_details()
+            elif user_choice == "3":
+                self.find_zodiac_sign()
+            elif user_choice == "4":
+                self.zodiac_sign_compatibility()
+            elif user_choice == "5":
+                break
+            else:
+                print("Invalid choice. Please enter a number between 1 and 5.")
+
         self.display_menu()
         self.display_goodbye_message()
