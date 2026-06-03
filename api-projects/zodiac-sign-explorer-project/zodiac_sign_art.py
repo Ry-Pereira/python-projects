@@ -1,5 +1,5 @@
 zodiac_signs_display_dictionary = {
-    "aries": {
+    "Aries": {
         "title": "Aries - The Ram",
         "ascii_art": r"""
    .-.   .-.
@@ -9,7 +9,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "taurus": {
+    "Taurus": {
         "title": "Taurus - The Bull",
         "ascii_art": r"""
     .     .
@@ -21,7 +21,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "gemini": {
+    "Gemini": {
         "title": "Gemini - The Twins",
         "ascii_art": r"""
     ._____.
@@ -32,7 +32,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "cancer": {
+    "Cancer": {
         "title": "Cancer - The Crab",
         "ascii_art": r"""
       .--.
@@ -43,7 +43,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "leo": {
+    "Leo": {
         "title": "Leo - The Lion",
         "ascii_art": r"""
       .--.
@@ -53,7 +53,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "virgo": {
+    "Virgo": {
         "title": "Virgo - The Virgin",
         "ascii_art": r"""
    _
@@ -65,7 +65,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "libra": {
+    "Libra": {
         "title": "Libra - The Balance",
         "ascii_art": r"""
         __
@@ -74,7 +74,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "scorpio": {
+    "Scorpio": {
         "title": "Scorpio - The Scorpion",
         "ascii_art": r"""
    _
@@ -86,7 +86,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "sagittarius": {
+    "Sagittarius": {
         "title": "Sagittarius - The Archer",
         "ascii_art": r"""
           ...
@@ -97,7 +97,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "capricorn": {
+    "Capricorn": {
         "title": "Capricorn - The Goat",
         "ascii_art": r"""
             _
@@ -108,7 +108,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "aquarius": {
+    "Aquarius": {
         "title": "Aquarius - The Water Bearer",
         "ascii_art": r"""
  .-"-._.-"-._.-
@@ -116,7 +116,7 @@ zodiac_signs_display_dictionary = {
 """
     },
 
-    "pisces": {
+    "Pisces": {
         "title": "Pisces - The Fishes",
         "ascii_art": r"""
      `-.    .-'
@@ -139,3 +139,7 @@ zodiac_sign_title_display = """
 ..##......##.....##.##.....##..##..##.....##.##....##....##....##..##..##....##..##...###....##........##...##..##........##.......##.....##.##....##..##.......##....##.
 .########..#######..########..####.##.....##..######......######..####..######...##....##....########.##.....##.##........########..#######..##.....##.########.##.....##
 """
+
+
+
+print(zodiac_signs_display_dictionary["Aries"]["title"])

@@ -1,5 +1,5 @@
 from zodiac_sign_art import *
-
+from zodiac_sign_requests import *
 
 
 
@@ -39,16 +39,22 @@ class ZodiacSignExplorerBrain:
 
 
     def list_all_zodiac_signs(self):
+        zodiac_signs = get_all_zodiac_signs()
+        print("\nZodiac Signs:")
+        for sign in zodiac_signs:
+            print("Sign: ",sign.text.strip())
+            print("Title: ",zodiac_signs_display_dictionary[sign.text]["title"])
+            print("Zodiac Symbol: ",zodiac_signs_display_dictionary[sign.text]["ascii_art"])
+    
+
+
+
+    def get_zodiac_sign_details(self,zodiac_sign):
         pass
 
 
 
-    def get_zodiac_sign_details(self):
-        pass
-
-
-
-    def find_zodiac_sign(self):
+    def find_zodiac_sign(self,birthday_date):
         pass
 
 
@@ -58,8 +64,7 @@ class ZodiacSignExplorerBrain:
 
 
 
-    def displauy_zodiac_sign_ascii_art(self, sign):
-        pass
+
 
 
 
@@ -84,3 +89,8 @@ class ZodiacSignExplorerBrain:
 
         self.display_menu()
         self.display_goodbye_message()
+
+
+test = ZodiacSignExplorerBrain()
+
+test.list_all_zodiac_signs()
