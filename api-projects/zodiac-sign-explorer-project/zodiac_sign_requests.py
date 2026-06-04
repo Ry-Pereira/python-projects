@@ -1,3 +1,17 @@
+#Name: Ryan Pereira
+#Project Name: Zodiac Sign Explorer Project
+#Description: A program that scrapes zodiac sign data from a website and displays it to the user in a user-friendly way. The program allows the user to view information about different zodiac signs, including their birthday ranges, personality traits, and compatibility.
+#Collaborators: None
+#Module Name: zodiac_sign_requests.py
+#Module Purpose: This program serves as the backend for the Zodiac Sign Explorer application. It defines functions to scrape zodiac sign data from a website. The functions include getting a list of all zodiac signs, getting the birthday ranges for each zodiac sign, getting the details for a specific zodiac sign, and getting the compatibility for a specific zodiac sign.
+#Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
+#Date: 6/1/2026
+#Last Modified: 6/4/2026
+
+
+
+
+
 
 from datetime import datetime
 

@@ -1,3 +1,19 @@
+#Name: Ryan Pereira
+#Project Name: Zodiac Sign Explorer Project
+#Description: A program that scrapes zodiac sign data from a website and displays it to the user in a user-friendly way. The program allows the user to view information about different zodiac signs, including their birthday ranges, personality traits, and compatibility.
+#Collaborators: None
+#Module Name: zodiac_sign_art.py
+#Module Purpose: This program serves as the user interface for the Zodiac Sign Explorer application. It defines the ASCII art representations for each zodiac sign.
+#Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
+#Date: 6/1/2026
+#Last Modified: 6/4/2026
+
+
+
+
+
+
+
 zodiac_signs_display_dictionary = {
     "Aries": {
         "title": "Aries - The Ram",
