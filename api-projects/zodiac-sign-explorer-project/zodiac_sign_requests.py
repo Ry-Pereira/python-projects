@@ -1,8 +1,12 @@
 
+from datetime import datetime
+
 from bs4 import BeautifulSoup
 from requests import *
 import requests
 import sys
+
+from datetime import datetime
 sys.stdout.reconfigure(encoding="utf-8")
 
 
@@ -34,10 +38,35 @@ def get_zodiac_sign_birthday_ranges():
     zodiac_sign_to_birthday_ranges = {}
 
     for sign, birthday_range in zip(signs, birthday_ranges):
-        zodiac_sign_to_birthday_ranges[sign.text.strip()] = birthday_range.text.strip()
+        start_date, end_date = birthday_range.text.strip().split(" - ")
+        start = datetime.strptime(start_date, "%B %d").strftime("%m:%d")
+        end = datetime.strptime(end_date, "%B %d").strftime("%m:%d")
+        zodiac_sign_to_birthday_ranges[sign.text.strip()] = (start, end)
 
-   
     return zodiac_sign_to_birthday_ranges
+
+
+
+
+def get_zodiac_sign_details(zodiac_sign):
+    zodiac_sign_details = {}
+    zodiac_sign_personality_dictionary = {}
+    url = f"https://www.zodiacsign.com/zodiac-signs/{zodiac_sign.lower()}/"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    t = soup.find_all("p")
+    for r in t:
+        if r.text.strip().split(":")[0] == "Strengths" or r.text.strip().split(":")[0] == "Weaknesses" or r.text.strip().split(":")[0] == f"{zodiac_sign} Likes" or r.text.strip().split(":")[0] == f"{zodiac_sign} Dislikes":
+            zodiac_sign_personality_dictionary[r.text.strip().split(":")[0]] = r.text.strip().split(":")[1].strip()
+        if r.text.strip().split(":")[0] != "Greatest Compatibility":
+            zodiac_sign_details[r.text.strip().split(":")[0]] = r.text.strip().split(":")[1].strip()
+
+    
+    
+    return zodiac_sign_details
+  
+
 
 
 
@@ -46,7 +75,12 @@ def get_zodiac_sign_compatibility(zodiac_sign):
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
-    for p in soup.find_all("p"):
-        b = p.find("b"):
-        if b.text.strip() == "Compatible Signs {zodaic_sign} ":
-            return p.text.strip().replace(f"Compatible Signs {zodiac_sign} is most compatible with:", "").strip()
+    t =soup.find_all("p")
+    for r in t:
+        if "Greatest Compatibility" in r.text:
+            zodiac_sign_compatibility = r.text.strip().split(":")[1].strip().split(",")
+    return zodiac_sign_compatibility
+
+
+
+print(get_zodiac_sign_details("Leo"))
