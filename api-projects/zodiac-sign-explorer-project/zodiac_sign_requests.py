@@ -13,7 +13,7 @@
 
 
 
-from datetime import datetime
+
 
 from bs4 import BeautifulSoup
 from requests import *
@@ -48,34 +48,39 @@ def get_zodiac_sign_birthday_ranges():
     soup = BeautifulSoup(response.text, 'html.parser')
     signs = soup.find_all("a", class_="tittle portfolio-2")
     birthday_ranges = soup.find_all("div", class_="category _2")
-
     zodiac_sign_to_birthday_ranges = {}
-
     for sign, birthday_range in zip(signs, birthday_ranges):
         start_date, end_date = birthday_range.text.strip().split(" - ")
-        start = datetime.strptime(start_date, "%B %d").strftime("%m:%d")
-        end = datetime.strptime(end_date, "%B %d").strftime("%m:%d")
-        zodiac_sign_to_birthday_ranges[sign.text.strip()] = (start, end)
-
+        zodiac_sign_to_birthday_ranges[sign.text.strip()] = [start_date.split(" "), end_date.split(" ")]
     return zodiac_sign_to_birthday_ranges
 
 
 
 
 def get_zodiac_sign_details(zodiac_sign):
-    zodiac_sign_details = {}
-    zodiac_sign_personality_dictionary = {}
+    
+    zodiac_sign_general_details = {}
+    zodiac_sign_personal_traits = {}
+    zodiac_sign_details = {"general_details": zodiac_sign_general_details,
+    "personal_traits": zodiac_sign_personal_traits}
+
+
     url = f"https://www.zodiacsign.com/zodiac-signs/{zodiac_sign.lower()}/"
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
     t = soup.find_all("p")
     for r in t:
-        if r.text.strip().split(":")[0] == "Strengths" or r.text.strip().split(":")[0] == "Weaknesses" or r.text.strip().split(":")[0] == f"{zodiac_sign} Likes" or r.text.strip().split(":")[0] == f"{zodiac_sign} Dislikes":
-            zodiac_sign_personality_dictionary[r.text.strip().split(":")[0]] = r.text.strip().split(":")[1].strip()
-        if r.text.strip().split(":")[0] != "Greatest Compatibility":
-            zodiac_sign_details[r.text.strip().split(":")[0]] = r.text.strip().split(":")[1].strip()
+        if r.text.split(":")[0] =="By":
+            break
+        elif r.text.split(":")[0] == "Strengths" or r.text.split(":")[0] == "Weaknesses" or r.text.split(":")[0] == f"{zodiac_sign} likes" or r.text.split(":")[0] == f"{zodiac_sign} dislikes":
+            zodiac_sign_details["personal_traits"][r.text.split(":")[0]] = r.text.split(":")[1]
 
+        elif r.text.split(":")[0] != "Greatest Compatibility":
+            zodiac_sign_details["general_details"][r.text.split(":")[0]] = r.text.split(":")[1]
+        
+
+        
     
     
     return zodiac_sign_details
@@ -97,4 +102,3 @@ def get_zodiac_sign_compatibility(zodiac_sign):
 
 
 
-print(get_zodiac_sign_details("Leo"))

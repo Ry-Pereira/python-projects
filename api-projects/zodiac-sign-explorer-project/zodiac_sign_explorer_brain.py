@@ -71,17 +71,43 @@ class ZodiacSignExplorerBrain:
 
 
     def get_zodiac_sign_details(self,zodiac_sign):
-        pass
+        zodiac_sign_details = get_zodiac_sign_details(zodiac_sign)
+        print("\nGeneral Information:")
+        for general_zodiac_sign_info_detail in zodiac_sign_details["general_details"]:
+            print(general_zodiac_sign_info_detail + ":" + zodiac_sign_details["general_details"][general_zodiac_sign_info_detail])
+
+        print("\nPersonal Information:")
+        for personal_zodiac_sign_info_detail in zodiac_sign_details["personal_traits"]:
+            print(personal_zodiac_sign_info_detail + ":" + zodiac_sign_details["personal_traits"][personal_zodiac_sign_info_detail])
+        
 
 
 
     def find_zodiac_sign(self,birthday_date):
-        pass
+        try:
+            # Convert the string entered by the user into a datetime object.
+            valid_date = datetime.strptime(birthday_date, "%Y-%m-%d")
+            # Retrieve and return moon phase information for the validated date.
+            month = valid_date.strftime("%B")  
+            day = str(valid_date.day)   
+            birthday_ranges = get_zodiac_sign_birthday_ranges()
+            for zodiac_sign in birthday_ranges:
+                if (birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day) or (birthday_ranges[zodiac_sign][1][0] == month and birthday_ranges[zodiac_sign][1][1] <= day):
+                    print("Your Zodiac Sign is: ",zodiac_sign)
 
 
 
-    def zodiac_sign_compatibility(self):
-        pass
+        # If the date format is invalid, handle the error gracefully.
+        except ValueError:
+            # Return an error message explaining the required format.
+            return "Invalid date format. Please enter a date in the format YYYY-MM-DD."
+
+
+
+    def zodiac_sign_compatibility(self,zodiac_sign):
+        compatable_zodiac_signs = get_zodiac_sign_compatibility(zodiac_sign)
+        print("\nYour Compatible Signs:")
+        print(compatable_zodiac_signs)
 
 
 
@@ -114,4 +140,4 @@ class ZodiacSignExplorerBrain:
 
 test = ZodiacSignExplorerBrain()
 
-test.list_all_zodiac_signs()
+test.find_zodiac_sign("2026-02-18")
