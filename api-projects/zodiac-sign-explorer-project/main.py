@@ -11,25 +11,23 @@
 
 
 
-
+#From zodiac_sign_explorer_brain import ZodiacSignExplorerBrain
 from zodiac_sign_explorer_brain import ZodiacSignExplorerBrain
 
 
 
 
 
-
-
-
-
-
-
+#Defined the main function to run the Zodiac Sign Explorer program
 def main():
+    #Creating an instance of the ZodiacSignExplorerBrain class and starting the program
     zodiac_explorer = ZodiacSignExplorerBrain()
+    #Running the program by calling the run method of the ZodiacSignExplorerBrain instance
     zodiac_explorer.run()
 
 
 
-
+#If the program is being run directly (instead of imported as a module), call the main function to start the program
 if __name__ == "__main__":
+    #Calling the main function to start the Zodiac Sign Explorer program
     main()
