@@ -13,7 +13,7 @@
 
 
 
-
+#This dictionary contains the ASCII art representations for each zodiac sign, along with their titles. The keys of the dictionary are the names of the zodiac signs, and the values are dictionaries that contain the title and ASCII art for each sign.
 zodiac_signs_display_dictionary = {
     "Aries": {
         "title": "Aries - The Ram",
@@ -146,6 +146,8 @@ zodiac_signs_display_dictionary = {
 
 
 
+
+#This variable contains the ASCII art representation of the title for the zodiac sign explorer program. It is a string that can be printed to the console to display the title in a visually appealing way.
 zodiac_sign_title_display = """
 .########..#######..########..####....###.....######......######..####..######...##....##....########.##.....##.########..##........#######..########..########.########.
 ......##..##.....##.##.....##..##....##.##...##....##....##....##..##..##....##..###...##....##........##...##..##.....##.##.......##.....##.##.....##.##.......##.....##
@@ -158,4 +160,13 @@ zodiac_sign_title_display = """
 
 
 
-print(zodiac_signs_display_dictionary["Aries"]["title"])
+
+#This variable contains the ASCII art representation of a divider line that can be used to separate different sections of the program's output. It is a string that can be printed to the console to create a visually appealing separation between different parts of the output.
+zodiac_sign_divider_display = """
+__________________________________________________________________________________________________________________________________________________________________________
+|   .-.     .-.     .-.     .-.     .-.     .-.     .-.      .-.     .-.     .-.     .-.     .-.     .-.     .-.    .-.     .-.     .-.     .-.     .-.     .-.     .-.   |
+|  /   \   /   \   /   \   /   \   /   \   /   \   /   \    /   \   /   \   /   \   /   \   /   \   /   \   /   \  /   \   /   \   /   \   /   \   /   \   /   \   /   \  |
+|-'     `-'     `-'     `-'     `-'     `-'     `-'     `--'     `-'     `-'     `-'     `-'     `-'     `-'     `-     `-'     `-'     `-'     `-'     `-'     `-'     `-|
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+"""
