@@ -133,11 +133,9 @@ class ZodiacSignExplorerBrain:
                 break
             else:
                 print("Invalid choice. Please enter a number between 1 and 5.")
+            print(zodiac_sign_divider_display)
 
         self.display_menu()
         self.display_goodbye_message()
 
 
-test = ZodiacSignExplorerBrain()
-
-test.find_zodiac_sign("2026-02-18")
