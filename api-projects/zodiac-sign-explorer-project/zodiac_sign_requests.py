@@ -72,7 +72,7 @@ def get_zodiac_sign_birthday_ranges():
 
 
 # Retrieves detailed information about a zodiac sign.
-def get_zodiac_sign_details(zodiac_sign):
+def get_zodiac_sign_information(zodiac_sign):
     # Stores general zodiac sign details.
     zodiac_sign_general_details = {}
     # Stores zodiac sign personality traits.

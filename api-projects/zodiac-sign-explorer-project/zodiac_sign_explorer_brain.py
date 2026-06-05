@@ -12,36 +12,26 @@
 
 
 
-
-
-
-
-
-
-
+#From zodiac_sign_art module, importing everything.
 from zodiac_sign_art import *
+#From zodiac_sign_requests module, importing everything.
 from zodiac_sign_requests import *
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+# Main class that manages the Zodiac Sign Explorer application.
 class ZodiacSignExplorerBrain:
-    
 
+    # Displays the welcome message shown when the program starts.
     def display_welcome_messaege(self):
-        print("Welcome to the Zodiac Sign Explorer!")
+        print("\nWelcome to the Zodiac Sign Explorer!")
         print("Discover the traits and characteristics of your zodiac sign.")
 
+
+
+
+    # Displays the application's menu options.
     def display_menu(self):
         print("\nZodiac Explorer Menu:")
         print("1. List all Zodiac Signs")
@@ -52,90 +42,135 @@ class ZodiacSignExplorerBrain:
 
 
 
-
+    # Displays a goodbye message when the program exits.
     def display_goodbye_message(self):
         print("\nThank you for using the Zodiac Sign Explorer. Goodbye!")
 
 
 
 
+    # Displays all zodiac signs along with their titles and ASCII art.
     def list_all_zodiac_signs(self):
+        # Retrieve all zodiac signs from the website.
         zodiac_signs = get_all_zodiac_signs()
         print("\nZodiac Signs:")
+        # Display information for each zodiac sign.
         for sign in zodiac_signs:
-            print("Sign: ",sign.text.strip())
-            print("Title: ",zodiac_signs_display_dictionary[sign.text]["title"])
-            print("Zodiac Symbol: ",zodiac_signs_display_dictionary[sign.text]["ascii_art"])
-    
+            print("Sign: ", sign.text.strip())
+            print("Title: ", zodiac_signs_display_dictionary[sign.text]["title"])
+            print("Zodiac Symbol: ", zodiac_signs_display_dictionary[sign.text]["ascii_art"])
 
 
 
-    def get_zodiac_sign_details(self,zodiac_sign):
-        zodiac_sign_details = get_zodiac_sign_details(zodiac_sign)
+
+    # Verifies that a zodiac sign entered by the user exists.
+    def verify_zodiac_sign(self, zodiac_sign_to_verify):
+        # Retrieve all zodiac signs.
+        zodiac_signs = get_all_zodiac_signs()
+        # Check whether the user's zodiac sign exists.
+        for zodiac_sign in zodiac_signs:
+            if zodiac_sign.text.strip() == zodiac_sign_to_verify:
+                print("Working")
+                return True
+        # Return False if no match is found.
+        return False
+
+
+
+
+    # Retrieves and displays detailed information about a zodiac sign.
+    def get_zodiac_sign_details(self, user_zodiac_sign):
+        # Validate the zodiac sign entered by the user.
+        if self.verify_zodiac_sign(user_zodiac_sign) == False:
+            print("Please input a valid Zodiac Sign")
+            return
+        # Retrieve zodiac sign details.
+        zodiac_sign_details = get_zodiac_sign_information(user_zodiac_sign)
         print("\nGeneral Information:")
+        # Display general zodiac sign information.
         for general_zodiac_sign_info_detail in zodiac_sign_details["general_details"]:
             print(general_zodiac_sign_info_detail + ":" + zodiac_sign_details["general_details"][general_zodiac_sign_info_detail])
-
         print("\nPersonal Information:")
+
+        # Display zodiac sign personality traits.
         for personal_zodiac_sign_info_detail in zodiac_sign_details["personal_traits"]:
             print(personal_zodiac_sign_info_detail + ":" + zodiac_sign_details["personal_traits"][personal_zodiac_sign_info_detail])
-        
 
 
 
-    def find_zodiac_sign(self,birthday_date):
+
+    # Determines a user's zodiac sign from their birth date.
+    def find_zodiac_sign(self, birthday_date):
         try:
-            # Convert the string entered by the user into a datetime object.
+            # Convert the user-entered date into a datetime object.
             valid_date = datetime.strptime(birthday_date, "%Y-%m-%d")
-            # Retrieve and return moon phase information for the validated date.
-            month = valid_date.strftime("%B")  
-            day = str(valid_date.day)   
+            # Extract the month name.
+            month = valid_date.strftime("%B")
+            # Extract the day of the month.
+            day = str(valid_date.day)
+            # Retrieve all zodiac sign birthday ranges.
             birthday_ranges = get_zodiac_sign_birthday_ranges()
+            # Compare the user's birth date against each zodiac sign range.
             for zodiac_sign in birthday_ranges:
-                if (birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day) or (birthday_ranges[zodiac_sign][1][0] == month and birthday_ranges[zodiac_sign][1][1] <= day):
-                    print("Your Zodiac Sign is: ",zodiac_sign)
-
-
-
-        # If the date format is invalid, handle the error gracefully.
+                if ((birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day) or (birthday_ranges[zodiac_sign][1][0] == month and birthday_ranges[zodiac_sign][1][1] <= day)):
+                    print("Your Zodiac Sign is: ", zodiac_sign)
+        # Handle invalid date formats.
         except ValueError:
             # Return an error message explaining the required format.
             return "Invalid date format. Please enter a date in the format YYYY-MM-DD."
 
 
 
-    def zodiac_sign_compatibility(self,zodiac_sign):
-        compatable_zodiac_signs = get_zodiac_sign_compatibility(zodiac_sign)
-        print("\nYour Compatible Signs:")
-        print(compatable_zodiac_signs)
+
+    # Displays zodiac signs that are most compatible with the user's sign.
+    def zodiac_sign_compatibility(self, user_zodiac_sign):
+        # Validate the zodiac sign entered by the user.
+        if self.verify_zodiac_sign(user_zodiac_sign) == False:
+            print("Please input a valid Zodiac Sign")
+            return
+        # Retrieve compatible zodiac signs.
+        compatable_zodiac_signs = get_zodiac_sign_compatibility(user_zodiac_sign)
+        # Display compatible zodiac signs.
+        print("\nYour Compatible Signs: " + (",").join(compatable_zodiac_signs))
 
 
 
 
-
-
-
+    # Main application loop.
     def run(self):
+        # Display the application title banner.
         print(zodiac_sign_title_display)
+        # Display the welcome message.
         self.display_welcome_messaege()
+        # Continue running until the user chooses to exit.
         while True:
+            # Display the menu.
             self.display_menu()
+            # Prompt the user for a menu choice.
             user_choice = input("Please enter your choice from the menu (1-5): ")
+            # List all zodiac signs.
             if user_choice == "1":
                 self.list_all_zodiac_signs()
+            # Display zodiac sign details.
             elif user_choice == "2":
-                self.get_zodiac_sign_details()
+                zodiac_sign_to_get_details = input("\nZodiac Sign To Get Info Details: ")
+                self.get_zodiac_sign_details(zodiac_sign_to_get_details)
+            # Find a zodiac sign from a birth date.
             elif user_choice == "3":
-                self.find_zodiac_sign()
+                birthday_to_find_zodiac_sign = input("\nGive your Birthday Date-YYYY-MM-DD To Find Your Zodiac Sign: ")
+                self.find_zodiac_sign(birthday_to_find_zodiac_sign)
+            # Display zodiac sign compatibility.
             elif user_choice == "4":
-                self.zodiac_sign_compatibility()
+                zodiac_sign_to_get_compatability_info = input("\nZodiac Sign To Check Compatibility: ")
+                self.zodiac_sign_compatibility(zodiac_sign_to_get_compatability_info)
+            # Exit the application.
             elif user_choice == "5":
                 break
+            # Handle invalid menu selections.
             else:
                 print("Invalid choice. Please enter a number between 1 and 5.")
+            # Display a divider after each operation.
             print(zodiac_sign_divider_display)
-
-        self.display_menu()
+        # Display the goodbye message.
         self.display_goodbye_message()
-
 
