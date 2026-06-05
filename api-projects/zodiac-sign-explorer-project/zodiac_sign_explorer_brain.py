@@ -99,37 +99,37 @@ class ZodiacSignExplorerBrain:
 
 
     # Determines a user's zodiac sign from their birth date.
-    def find_zodiac_sign(self, birthday_date):
-        try:
-            # Convert the user-entered date into a datetime object.
-            valid_date = datetime.strptime(birthday_date, "%Y-%m-%d")
-            next_month = ""
-            current_month = valid_date.month
-
-            if current_month == 12:
-                next_month = 1
-            else:
-                next_month = current_month + 1
-
-
-            print("NEXT",next_month.strftime("%B"))
-            # Extract the month name.
-            month = valid_date.strftime("%B")
-            # Extract the day of the month.
-            day = str(valid_date.day)
-            # Retrieve all zodiac sign birthday ranges.
-            birthday_ranges = get_zodiac_sign_birthday_ranges()
-            # Compare the user's birth date against each zodiac sign range.
-            for zodiac_sign in birthday_ranges:
-                if (birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day and birthday_ranges[zodiac_sign][1][1] <= day):
-                    print("Your Zodiac Sign is: ", zodiac_sign)
-
-                if (birthday_ranges[zodiac_sign][1][0] == month and birthday_ranges[zodiac_sign][1][1] <= day):
-                    print("Your Zodiac Sign is: ", zodiac_sign)
-        # Handle invalid date formats.
-        except ValueError:
-            # Return an error message explaining the required format.
-            return "Invalid date format. Please enter a date in the format YYYY-MM-DD."
+def find_zodiac_sign(self, birthday_date):
+    try:
+        # Convert the user-entered date string into a datetime object.
+        valid_date = datetime.strptime(birthday_date, "%Y-%m-%d")
+        # Check if the birth month is December.
+        if valid_date.month == 12:
+            # Create a new date in January of the following year.
+            next_date = valid_date.replace(year=valid_date.year + 1, month=1)
+        else:
+            # Create a new date with the month increased by one.
+            next_date = valid_date.replace(month=valid_date.month + 1)
+        # Convert the birth month into its full month name.
+        month = valid_date.strftime("%B")
+        # Extract the day portion of the birth date.
+        day = str(valid_date.day)
+        # Convert the next month's date into its full month name.
+        next_month = next_date.strftime("%B")
+        # Extract the day portion of the next month's date.
+        next_day = str(next_date.day)
+        # Retrieve all zodiac sign birthday ranges.
+        birthday_ranges = get_zodiac_sign_birthday_ranges()
+        # Loop through each zodiac sign and its birthday range.
+        for zodiac_sign in birthday_ranges:
+            # Check whether the birth date falls within the zodiac sign's range.
+            if ((birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day) or (birthday_ranges[zodiac_sign][1][0] == next_month and birthday_ranges[zodiac_sign][0][1] <= next_day)):
+                # Display the matching zodiac sign.
+                print("Your Zodiac Sign is: ", zodiac_sign)
+    # Handle invalid date formats entered by the user.
+    except ValueError:
+        # Return an error message explaining the required format.
+        return "Invalid date format. Please enter a date in the format YYYY-MM-DD."
 
 
 
