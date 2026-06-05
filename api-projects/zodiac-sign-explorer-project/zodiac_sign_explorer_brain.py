@@ -70,7 +70,6 @@ class ZodiacSignExplorerBrain:
         # Check whether the user's zodiac sign exists.
         for zodiac_sign in zodiac_signs:
             if zodiac_sign.text.strip() == zodiac_sign_to_verify:
-                print("Working")
                 return True
         # Return False if no match is found.
         return False
@@ -104,6 +103,16 @@ class ZodiacSignExplorerBrain:
         try:
             # Convert the user-entered date into a datetime object.
             valid_date = datetime.strptime(birthday_date, "%Y-%m-%d")
+            next_month = ""
+            current_month = valid_date.month
+
+            if current_month == 12:
+                next_month = 1
+            else:
+                next_month = current_month + 1
+
+
+            print("NEXT",next_month.strftime("%B"))
             # Extract the month name.
             month = valid_date.strftime("%B")
             # Extract the day of the month.
@@ -112,7 +121,10 @@ class ZodiacSignExplorerBrain:
             birthday_ranges = get_zodiac_sign_birthday_ranges()
             # Compare the user's birth date against each zodiac sign range.
             for zodiac_sign in birthday_ranges:
-                if ((birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day) or (birthday_ranges[zodiac_sign][1][0] == month and birthday_ranges[zodiac_sign][1][1] <= day)):
+                if (birthday_ranges[zodiac_sign][0][0] == month and birthday_ranges[zodiac_sign][0][1] >= day and birthday_ranges[zodiac_sign][1][1] <= day):
+                    print("Your Zodiac Sign is: ", zodiac_sign)
+
+                if (birthday_ranges[zodiac_sign][1][0] == month and birthday_ranges[zodiac_sign][1][1] <= day):
                     print("Your Zodiac Sign is: ", zodiac_sign)
         # Handle invalid date formats.
         except ValueError:
