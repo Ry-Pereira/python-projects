@@ -9,10 +9,11 @@
 #Last Modified: 
 
 
-
+from where_am_i_locator_brain import WhereAmILocatorBrain
 
 def main():
-  pass
+  where_am_i_locator_program = WhereAmILocatorBrain()
+  where_am_i_locator_program.run()
 
 
 
