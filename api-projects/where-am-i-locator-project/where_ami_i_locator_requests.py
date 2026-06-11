@@ -41,9 +41,9 @@ def get_ip_address():
 
 
 # Retrieves all zodiac sign links from the homepage.
-def get_additional_ip_location():
+def get_additional_ip_location(ip):
     # Stores the URL of the zodiac sign homepage.
-    url = "http://ip-api.com/json/{ip}}"
+    url = f"http://ip-api.com/json/{ip}"
     # Sends an HTTP GET request to the website.
     response = requests.get(url, headers=headers)
     # Parses the HTML content of the webpage.
@@ -52,3 +52,8 @@ def get_additional_ip_location():
     return response.json()
 
 
+
+
+
+test = get_ip_address()
+print(get_additional_ip_location(test))
