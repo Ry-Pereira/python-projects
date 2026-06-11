@@ -1,10 +1,10 @@
 #Name: Ryan Pereira
 #Project Name: Where Am I Locator Project
-#Description: 
-#Module Name: main.py
-#Module Purpose: 
+#Description: A program that retrieves location information from a user's public IP address and allows the user to view details such as location, coordinates, time zone, ISP information, and save reports.
+#Module Name: where_am_i_locator_brain.py
+#Module Purpose: Contains the WhereAmILocatorBrain class, which manages user interaction, menu navigation, data retrieval, report generation, and overall program functionality.
 #Collaborators: None
-#Sources:  Github Copilot, Stack Overflow, ChatGPT, Python documentation
+#Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
 #Date: 6/10/2026
 #Last Modified: 6/11/2026
 
