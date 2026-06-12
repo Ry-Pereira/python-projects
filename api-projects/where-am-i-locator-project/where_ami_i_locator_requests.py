@@ -6,7 +6,7 @@
 # Collaborators: None
 # Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation
 # Date: 6/10/2026
-# Last Modified: 6/11/2026
+# Last Modified: 6/12/2026
 
 
 
@@ -44,7 +44,7 @@ def get_ip_address():
 
 
 # Retrieves location and network information for a given IP address.
-def get_additional_information_from_location(ip):
+def get_location_information_from_ip(ip):
     # Creates the API URL using the supplied IP address.
     url = f"http://ip-api.com/json/{ip}"
     # Sends an HTTP GET request to the IP location API.
