@@ -1,0 +1,21 @@
+Country: United States
+
+Region: Kansas
+
+City: Overland Park
+
+Zip Code: 66212
+
+Latitude: 38.9507
+
+Longitude: -94.6824
+
+Time Zone: America/Chicago
+
+Time Display: 10:59 AM
+
+ISP: Google Fiber Inc.
+
+Organization: Google Fiber Inc
+
+Autonomous System Number: AS16591 Google Fiber Inc.

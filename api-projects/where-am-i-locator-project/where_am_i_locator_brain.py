@@ -159,7 +159,7 @@ class WhereAmILocatorBrain:
     # Main program loop
     def execute_program(self):
         # Continue looping until user exits
-        print(title_display,"\n\n")
+        print(title_display)
         while True:
             # Display menu
             self.display_menu()
@@ -168,40 +168,41 @@ class WhereAmILocatorBrain:
             # Option 1 - Display IP Address
             if user_choice == "1":
                 user_isp = self.show_ip()
-                print(f"IP ADDRESS: {user_isp}\n")
+                print(f"\nIP ADDRESS: {user_isp}\n")
             # Option 2 - Display location information
             elif user_choice == "2":
                 user_country_location, user_region_location, user_city_location, user_zip_locaion = self.get_address_location_information()
-                print(f"Country: {user_country_location}")
+                print(f"\nCountry: {user_country_location}")
                 print(f"Region: {user_region_location}")
                 print(f"City: {user_city_location}")
                 print(f"Zip Code: {user_zip_locaion}\n")
             # Option 3 - Display coordinates
             elif user_choice == "3":
                 user_latitude_coordinate_location, user_longitude_coordinate_location = self.get_coordinate_location_information()
-                print(f"Latitude: {user_latitude_coordinate_location}")
+                print(f"\nLatitude: {user_latitude_coordinate_location}")
                 print(f"Longitude: {user_longitude_coordinate_location}\n")
             # Option 4 - Display timezone information
             elif user_choice == "4":
                 user_timezone_location, user_formatted_time = self.get_time_information()
-                print(f"Time Zone: {user_timezone_location}")
+                print(f"\nTime Zone: {user_timezone_location}")
                 print(f"Time Display: {user_formatted_time}\n")
             # Option 5 - Display ISP information
             elif user_choice == "5":
                 user_isp, user_isp_organization, user_isp_autnomous_systems_number = self.get_isp_information()
-                print(f"ISP: {user_isp}")
+                print(f"\nISP: {user_isp}")
                 print(f"Organization: {user_isp_organization}")
                 print(f"Autonomous System Number: {user_isp_autnomous_systems_number}\n")
             # Option 6 - Save report
             elif user_choice == "6":
                 self.save_report()
+                print("Report Saved to Text File")
             # Option 7 - Exit program
             elif user_choice == "7":
                 break
             # Invalid choice
             else:
                 print("\nPlease Input a valid choice")
-            print("\n\n",divider_display,"\n\n")
+            print("\n",divider_display,"\n")
 
 
 
