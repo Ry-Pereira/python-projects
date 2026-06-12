@@ -1,111 +1,178 @@
-# 🎯 Project Name
+# 🌎 Where Am I Locator Project
 
 ## 📌 Overview
 
-Brief description of the project.
+The **Where Am I Locator Project** is a Python application that determines a user's approximate geographic location using their public IP address. The program retrieves information from online IP lookup services and presents useful details such as location, coordinates, time zone, and ISP information through an interactive menu system.
 
-Explain what the project does, how it works, and what users can accomplish with it.
-
-Users can:
-
-* Run Python programs
-* Practice programming concepts
-* Work with user input
-* Display program output
-* Build beginner-friendly projects
+Users can view their location information, save a report containing all collected data, and explore details about their internet connection.
 
 ---
 
-## 🧱 Project Structure
+## ✨ Features
+
+✅ Display Public IP Address
+
+✅ Display Country, Region, City, and ZIP Code
+
+✅ Display Latitude and Longitude Coordinates
+
+✅ Display Time Zone and Local Time
+
+✅ Display Internet Service Provider (ISP) Information
+
+✅ Generate and Save a Location Report
+
+✅ Interactive Menu-Driven Interface
+
+✅ Decorative ASCII Art User Interface
+
+---
+
+## 🛠 Technologies Used
+
+* Python 3
+* Requests Library
+* BeautifulSoup4
+* IP-API
+* ZoneInfo
+* Datetime Module
+
+---
+
+## 📂 Project Structure
 
 ```text
-project-folder/
+WhereAmILocatorProject/
 │
-├── main.py                 # Main Python program
-│
-└── README.md               # Project documentation
+├── main.py
+├── where_am_i_locator_brain.py
+├── where_am_i_locator_requests.py
+├── where_am_i_locator_art.py
+├── where_am_i_report.txt
+└── README.md
+```
+
+### Module Descriptions
+
+#### main.py
+
+Program entry point that creates and runs the `WhereAmILocatorBrain` object.
+
+#### where_am_i_locator_brain.py
+
+Contains the main program logic, menu system, data retrieval methods, report generation, and user interaction.
+
+#### where_am_i_locator_requests.py
+
+Handles web requests for retrieving the user's public IP address and location information from APIs.
+
+#### where_am_i_locator_art.py
+
+Stores ASCII art banners and decorative dividers used throughout the program.
+
+---
+
+## 🚀 How to Run
+
+### 1. Install Required Libraries
+
+```bash
+pip install requests
+pip install beautifulsoup4
+```
+
+### 2. Run the Program
+
+```bash
+python main.py
 ```
 
 ---
 
-## 🚀 Features
+## 📋 Menu Options
 
-* Python-based application
-* Beginner-friendly code
-* Organized project structure
-* Easy to customize
-* Simple project setup
-
----
-
-## 🛠️ Technologies Used
-
-* Python 3
+| Option | Description                   |
+| ------ | ----------------------------- |
+| 1      | Show Public IP Address        |
+| 2      | Show Location Information     |
+| 3      | Show Coordinates              |
+| 4      | Show Time Zone and Local Time |
+| 5      | Show ISP Information          |
+| 6      | Save Report                   |
+| 7      | Exit Program                  |
 
 ---
 
-## 📡 Project Purpose
+## 📄 Sample Report Output
 
-This project is designed to:
+```text
+Country: United States
 
-Practice Python programming fundamentals.
+Region: Kansas
 
----
+City: Lawrence
 
-## ▶️ How to Run the Project
+Zip Code: 66045
 
-1. Download or clone the repository:
+Latitude: 38.9717
 
-   ```bash
-   git clone <your-repository-url>
-   ```
+Longitude: -95.2353
 
-2. Open the project folder.
+Time Zone: America/Chicago
 
-3. Verify the following files exist:
+Time Display: 03:45 PM
 
-   * `main.py`
+ISP: Example ISP
 
-4. Run the program:
+Organization: Example Organization
 
-   ```bash
-   python main.py
-   ```
-
-5. Follow the on-screen instructions.
+Autonomous System Number: AS12345
+```
 
 ---
 
-## 📂 Project Contents
+## 🎯 Learning Objectives
 
-* `main.py` — Main Python program
-* `README.md` — Project documentation
+This project demonstrates:
 
----
-
-## 💡 Learning Concepts
-
-* Variables and Data Types
-* User Input and Output
-* Conditional Statements
-* Loops
-* Functions
+* Working with APIs
+* Web Scraping with BeautifulSoup
+* Object-Oriented Programming
+* File Handling
+* Dictionaries and JSON Data
+* User Input Validation
+* Modular Programming
+* Time Zone Handling
 
 ---
 
-## 🔮 Future Improvements
+## ⚠️ Notes
 
-* Add new features
-* Improve user experience
-* Enhance program functionality
-* Refactor code structure
+* Location data is approximate and based on the public IP address.
+* VPNs and proxies may affect the reported location.
+* An active internet connection is required.
+* API availability may impact program functionality.
 
 ---
 
-## 📅 Project Info
+## 👨‍💻 Author
 
-**Author:** Ryan Pereira
-**Created:** 06/02/2026
-**Last Modified:** 06/02/2026
+**Ryan Pereira**
+
+Computer Science Student
+
+University of Kansas
+
+---
+
+## 📚 Sources
+
+* Python Documentation
+* BeautifulSoup Documentation
+* Requests Documentation
+* IP-API
+* Stack Overflow
+* GitHub Copilot
+* ChatGPT
 
 
