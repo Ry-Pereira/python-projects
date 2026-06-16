@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+
+
+class WeatherTrackerBrain:
+
+    def display_welcome_message(self):
+        print("\nWELCOME TO THE WEATHER FOREACAST TRACKER")
+        print("PLEASE FOLLOW DIRECTIONS TO USE PROGRAM")
+
+
+    def display_goodbye_message(self):
+        print("\nTHANKYOU SO MUCH FOR USING PROGRAM!")
+        print("GOODBYE!")
+
+
+
+
+
+    def display_menu(self):
+        print("\n1.DISPLAY CURRENR WEATHER")
+        print("2.DISPLAY CURRENT WEATHER IN DIFFERENT LOCATION")
+        print("4.DISPLAY FIVE DAY FORECAST")
+        print("5.GET WEATHER SEARCH HISTORY")
+        print("6.EXIT")
+
+
+
+
+    def run(self):
+        self.display_welcome_message()
+        self.display_menu()
+        self.display_goodbye_message()
+        
