@@ -8,11 +8,12 @@
 #Date:
 #Last Modified: 
 
-
+from weather_tracker_brain import WeatherTrackerBrain
 
 
 def main():
-  pass
+  weather_tracker_program = WeatherTrackerBrain()
+  weather_tracker_program.run()
 
 
 
