@@ -1,0 +1,32 @@
+from requests import *
+import requests
+
+
+
+
+
+headers = {"User-Agent": "Mozilla/5.0"}
+
+api_key = ""
+
+
+
+def get_lat_and_lat_coordinates_info(city_name,state):
+    geo_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state},US&limit=1&appid={api_key}"
+
+    geo_response = requests.get(geo_url)
+    data = geo_response.json()
+
+    lat = data[0]["lat"]
+    lon = data[0]["lon"]
+
+    return [lat,lon]
+
+
+
+
+def get_weather_for_today_info():
+    current_weather_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}"
+    current_weather_response = requests.get(current_weather_url)
+    current_weather_data = current_weather_response.json()
+    return current_weather_data

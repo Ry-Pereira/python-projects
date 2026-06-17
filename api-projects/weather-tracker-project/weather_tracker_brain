@@ -23,17 +23,25 @@ class WeatherTrackerBrain:
 
 
     def display_menu(self):
-        print("\n1.DISPLAY CURRENR WEATHER")
+        print("\n1.DISPLAY CURRENT WEATHER")
         print("2.DISPLAY CURRENT WEATHER IN DIFFERENT LOCATION")
         print("4.DISPLAY FIVE DAY FORECAST")
         print("5.GET WEATHER SEARCH HISTORY")
         print("6.EXIT")
 
 
+    def play_program(self):
+        while(True):
+            self.display_menu()
+            user_menu_choice = input("\nPLEASE INPUT CHOICE: ")
+
+
+
+
 
 
     def run(self):
         self.display_welcome_message()
-        self.display_menu()
+        self.play_program()
         self.display_goodbye_message()
         
