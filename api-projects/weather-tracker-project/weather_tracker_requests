@@ -1,3 +1,20 @@
+#Name: Ryan Pereira 
+#Project Name: Weather Tracker Project
+#Description:
+#Module Name: weather_tracker_requests.py
+#Module Purpose:
+#Collaborators: None
+#Sources: Github Copilot, Stack Overflow, ChatGPT, Python documentation.
+#Date: 6/15/2026
+#Last Modified: 6/18/2026
+
+
+
+
+
+
+
+
 from requests import *
 import requests
 
@@ -30,3 +47,8 @@ def get_weather_for_today_info():
     current_weather_response = requests.get(current_weather_url)
     current_weather_data = current_weather_response.json()
     return current_weather_data
+
+
+
+
+
