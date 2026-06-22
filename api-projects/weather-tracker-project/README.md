@@ -1,111 +1,51 @@
-# 🎯 Project Name
+# 🌦️ Weather Tracker Project
 
 ## 📌 Overview
-
-Brief description of the project.
-
-Explain what the project does, how it works, and what users can accomplish with it.
-
-Users can:
-
-* Run Python programs
-* Practice programming concepts
-* Work with user input
-* Display program output
-* Build beginner-friendly projects
-
+The Weather Tracker Project is a Python command-line application that retrieves current weather and a 5-day forecast using the OpenWeather API. It provides a menu-driven interface and displays results in clean, formatted tables.
 ---
-
-## 🧱 Project Structure
-
-```text
-project-folder/
-│
-├── main.py                 # Main Python program
-│
-└── README.md               # Project documentation
-```
-
----
-
 ## 🚀 Features
-
-* Python-based application
-* Beginner-friendly code
-* Organized project structure
-* Easy to customize
-* Simple project setup
-
+- Get current weather by city, state, and country
+- View 5-day weather forecast
+- PrettyTable formatted output
+- ASCII art welcome screen
+- Continuous menu until exit
 ---
-
+## 🧠 How It Works
+- `main.py` starts the program
+- `weather_tracker_brain.py` handles user interaction
+- `weather_tracker_requests.py` handles API calls
+- `weather_tracker_art.py` stores ASCII art UI elements
+---
 ## 🛠️ Technologies Used
-
-* Python 3
-
+- Python 3
+- Requests
+- PrettyTable
+- OpenWeather API
 ---
-
-## 📡 Project Purpose
-
-This project is designed to:
-
-Practice Python programming fundamentals.
-
+## 📦 Installation
+git clone https://github.com/yourusername/weather-tracker-project.git  
+pip install requests prettytable  
 ---
-
-## ▶️ How to Run the Project
-
-1. Download or clone the repository:
-
-   ```bash
-   git clone <your-repository-url>
-   ```
-
-2. Open the project folder.
-
-3. Verify the following files exist:
-
-   * `main.py`
-
-4. Run the program:
-
-   ```bash
-   python main.py
-   ```
-
-5. Follow the on-screen instructions.
-
+## 🔑 API Setup
+Get an API key from https://openweathermap.org/api  
+Then replace:
+api_key = "YOUR_API_KEY_HERE"
 ---
-
-## 📂 Project Contents
-
-* `main.py` — Main Python program
-* `README.md` — Project documentation
-
+## ▶️ Run Program
+python main.py
 ---
-
-## 💡 Learning Concepts
-
-* Variables and Data Types
-* User Input and Output
-* Conditional Statements
-* Loops
-* Functions
-
+## 🧭 Menu
+1. DISPLAY CURRENT WEATHER  
+2. DISPLAY FIVE DAY FORECAST  
+3. EXIT
 ---
-
-## 🔮 Future Improvements
-
-* Add new features
-* Improve user experience
-* Enhance program functionality
-* Refactor code structure
-
+## 📁 Project Structure
+Weather Tracker Project/
+├── main.py
+├── weather_tracker_brain.py
+├── weather_tracker_requests.py
+├── weather_tracker_art.py
 ---
-
-## 📅 Project Info
-
-**Author:** Ryan Pereira
-**Created:** 06/02/2026
-**Last Modified:** 06/02/2026
-
+## 👨‍💻 Author
+Ryan Pereira
 
